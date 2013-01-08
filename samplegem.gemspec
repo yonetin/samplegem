@@ -1,4 +1,6 @@
 # -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require File.expand_path('../lib/samplegem/version', __FILE__)
 
 Gem::Specification.new do |gem|
@@ -14,4 +16,8 @@ Gem::Specification.new do |gem|
   gem.name          = "samplegem"
   gem.require_paths = ["lib"]
   gem.version       = Samplegem::VERSION
+  gem.add_dependency 'activesupport'
+  
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
 end
